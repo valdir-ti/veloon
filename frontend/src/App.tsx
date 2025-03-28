@@ -1,10 +1,9 @@
 import './App.css'
 
 function App() {
-
   return (
-    <main>
-      <h2 className="text-3xl font-bold">Veloon - Irmãos Siameses</h2>
+    <main className='h-full'>
+      <h2 className="text-3xl font-bold">Home Page</h2>
     </main>
   )
 }
