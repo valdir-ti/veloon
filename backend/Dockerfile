@@ -12,6 +12,8 @@ RUN npm install
 # Copiar código fonte
 COPY backend/ .
 
+RUN npx prisma generate
+
 # Gerar a build do backend
 RUN npm run build
 
