@@ -7,7 +7,6 @@ function Pagination({ currentPage, setPage, totalPages }: TPagination) {
 
     const startPage = Math.max(1, currentPage - Math.floor(pagesToShow / 2))
     const endPage = Math.min(totalPages, startPage + pagesToShow - 1)
-
     const visiblePages = Array.from(
         { length: endPage - startPage + 1 },
         (_, i) => startPage + i
