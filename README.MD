@@ -6,4 +6,4 @@
 
 - Acesse a pasta raiz do projeto e rode o comando:
 
-    ```docker-compose up --build```
+  `docker-compose up -d --build`
