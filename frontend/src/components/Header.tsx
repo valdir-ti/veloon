@@ -1,8 +1,18 @@
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 
 import logo from '../assets/Logo_Veloon_v1_02.png';
 
 function Header() {
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        const confirmLogout = window.confirm("Deseja realmente sair?")
+        if (!confirmLogout) return
+
+        localStorage.removeItem('authToken');
+        navigate("/login")
+    }
+
     return <nav className="min-h-24 w-full border-b border-b-[#4011677a] mb-12">
         <div className="flex h-full items-center justify-between w-full md:w-[60vw] mx-auto px-6 md:px-0">
             <Link to='/'>
@@ -14,6 +24,9 @@ function Header() {
                 </li>
                 <li>
                     <Link to='/historico'>Histórico</Link>
+                </li>
+                <li>
+                    <button onClick={handleLogout} className="cursor-pointer">Logout</button>
                 </li>
             </ul>
         </div>
