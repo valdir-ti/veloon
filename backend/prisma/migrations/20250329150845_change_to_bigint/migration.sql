@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "equality_check" ALTER COLUMN "numero1" SET DATA TYPE BIGINT,
+ALTER COLUMN "numero2" SET DATA TYPE BIGINT;
