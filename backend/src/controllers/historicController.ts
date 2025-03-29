@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { EqualityCheck } from "@prisma/client";
 
 import prisma from "../prisma";
 
@@ -22,7 +23,7 @@ export const historic = async (req: Request, res: Response): Promise<void> => {
       },
     });
 
-    const serializedHistory = history.map((item) => ({
+    const serializedHistory = history.map((item: EqualityCheck) => ({
       ...item,
       numero1: item.numero1.toString(),
       numero2: item.numero2.toString(),
