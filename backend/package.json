@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --legacy-watch src/server.ts",
     "start": "node src/server.ts",
-    "build": "tsc",
+    "build": "prisma generate && tsc",
     "test": "jest",
     "lint": "eslint . --ext .ts"
   },
