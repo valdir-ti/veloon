@@ -8,9 +8,10 @@ export const equalityCheck = async (
   res: Response
 ): Promise<void> => {
   try {
-    const { numero1, numero2, user_id } = req.body;
+    const { numero1, numero2 } = req.body;
+    const id = req.user;
 
-    if (!user_id) {
+    if (!id) {
       res.status(422).json({
         error: "Invalid request",
       });
@@ -18,7 +19,7 @@ export const equalityCheck = async (
     }
 
     const userExists = await prisma.user.findUnique({
-      where: { id: user_id },
+      where: { id: +id },
     });
 
     if (!userExists) {
@@ -28,7 +29,7 @@ export const equalityCheck = async (
 
     if (!numero1 || !numero2) {
       res.status(422).json({
-        error: "Two numbers are required",
+        error: "Dois números são necessários",
       });
       return;
     }
@@ -49,7 +50,7 @@ export const equalityCheck = async (
         numero1,
         numero2,
         resultado: siameseNumbers,
-        userId: user_id,
+        userId: +id,
       },
     });
 
