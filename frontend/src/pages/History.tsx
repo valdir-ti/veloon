@@ -124,8 +124,7 @@ function History() {
             <>
                 <div className="w-full max-w-4xl rounded-lg shadow-lg p-2">
                     <div className="overflow-x-auto">
-
-                        <table className="table-auto border-collapse border-gray-200">
+                        <table className="table-auto w-full border-collapse border-gray-200">
                             <thead>
                                 <tr className="bg-gray-50 text-black">
                                     <th className="border border-gray-300 px-4 py-2 text-left">ID</th>
