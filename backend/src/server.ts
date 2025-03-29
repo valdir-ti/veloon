@@ -18,7 +18,7 @@ app.use(express.json());
 
 app.use("/api", userRouter);
 app.use("/api", loginRouter);
-app.use("/api", equalityCheckRouter);
+app.use("/api", authenticateToken, equalityCheckRouter);
 app.use("/api", authenticateToken, historicCheckRouter);
 
 app.get("/health", (req, res) => {

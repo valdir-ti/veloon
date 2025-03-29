@@ -43,7 +43,6 @@ export const deleteHistoric = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  console.log("DELETE request received");
   try {
     const { id } = req.params;
 
