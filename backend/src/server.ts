@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import userRouter from "./routes/userRoute";
 import loginRouter from "./routes/loginRoute";
+import equalityCheckRouter from "./routes/equalityCheck";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use("/api", userRouter);
 app.use("/api", loginRouter);
+app.use("/api", equalityCheckRouter);
 
 app.get("/health", (req, res) => {
   res.status(200).json({

@@ -19,8 +19,8 @@ model User {
 
 model EqualityCheck {
   id Int @id @default(autoincrement())
-  numero1 Int @db.Integer
-  numero2 Int @db.Integer
+  numero1 BigInt @db.BigInt
+  numero2 BigInt @db.BigInt
   resultado Boolean @default(false)
   createdAt DateTime @default(now()) @map("created_at")
   userId Int @map("user_id")
