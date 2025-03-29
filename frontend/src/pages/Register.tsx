@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import logo from '../assets/Logo_Veloon_v1_02.png'
+import { API_URL } from '../utils/apiUrl';
 
-const API_URL = import.meta.env.VITE_API_URL
 interface FormData {
   email: string;
   password: string;
@@ -44,8 +44,6 @@ function Register() {
 
     setError('')
     setLoading(true)
-
-    console.log('API_URL => ', API_URL)
 
     try {
       const response = await fetch(`${API_URL}/users`, {
