@@ -3,75 +3,10 @@ import { BsTrash3Fill, BsCheckCircleFill, BsFileExcelFill } from "react-icons/bs
 
 import { THistorico } from "../types/historico"
 import Pagination from "../components/Pagination";
-
-const historyData = [
-    {
-        id: '2123234234',
-        numero1: 21211233,
-        numero2: 43442323,
-        resultado: false,
-        timestamp: new Date
-    },
-    {
-        id: '21232342333',
-        numero1: 21211233,
-        numero2: 43442323,
-        resultado: false,
-        timestamp: new Date
-    },
-    {
-        id: '2123222224',
-        numero1: 21211233,
-        numero2: 43442323,
-        resultado: false,
-        timestamp: new Date
-    },
-    {
-        id: '2123234000',
-        numero1: 21211233,
-        numero2: 21211233,
-        resultado: true,
-        timestamp: new Date
-    },
-    {
-        id: '44423234234',
-        numero1: 21211255,
-        numero2: 43442300,
-        resultado: false,
-        timestamp: new Date
-    },
-    {
-        id: '8883234231',
-        numero1: 43442323,
-        numero2: 43442323,
-        resultado: true,
-        timestamp: new Date
-    },
-    {
-        id: '8883234232',
-        numero1: 43442323,
-        numero2: 43442321,
-        resultado: false,
-        timestamp: new Date
-    },
-    {
-        id: '8883234233',
-        numero1: 43442323,
-        numero2: 43442323,
-        resultado: true,
-        timestamp: new Date
-    },
-    {
-        id: '8883234235',
-        numero1: 43442323,
-        numero2: 43442322,
-        resultado: false,
-        timestamp: new Date
-    }
-]
+import { API_URL } from "../utils/apiUrl";
 
 function History() {
-
+    const token = localStorage.getItem('authToken');
     const [loading, setLoading] = useState(false)
     const [history, setHistory] = useState<THistorico[]>([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -82,8 +17,12 @@ function History() {
         if (!confirmDelete) return
 
         try {
-            const response = await fetch(`/api/historico/${id}]`, {
-                method: 'DELETE'
+            const response = await fetch(`${API_URL}/historico/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                },
             })
 
             if (!response.ok) {
@@ -91,16 +30,24 @@ function History() {
             }
 
             alert("Item excluído com sucesso")
+            setHistory((prevData) => prevData.filter((item) => item.id !== id))
         } catch (error) {
             console.error(error)
         }
     }
 
     useEffect(() => {
-        // Make an api call and fill the setHistory variable
         const fetchData = async () => {
             setLoading(true)
             try {
+                const response = await fetch(`${API_URL}/historico`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                    },
+                })
+                const historyData = await response.json()
                 setHistory(historyData)
                 setLoading(false)
             } catch (error) {

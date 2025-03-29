@@ -32,8 +32,9 @@ function Pagination({ currentPage, setPage, totalPages }: TPagination) {
                 )}
             </>
         )}
-        {visiblePages.map((page) => (
+        {visiblePages.map((page, idx) => (
             <button
+                key={idx}
                 className={`btn-primary w-8 h-8 flex justify-center items-center rounded-full border ${currentPage === page ? 'bg-gradient-to-r from-blue-300 to-purple-500 text-white font-bold' : 'bg-white hover:bg-blue-100 text-gray-700'}`}
                 onClick={() => setPage(page)}
             >
