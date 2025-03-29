@@ -7,6 +7,7 @@ import loginRouter from "./routes/loginRoute";
 import equalityCheckRouter from "./routes/equalityCheck";
 import historicCheckRouter from "./routes/historicRouter";
 import { authenticateToken } from "./middlewares/authenticateToken";
+import swaggerDocs from "./config/swaggerConfig";
 
 dotenv.config();
 
@@ -27,6 +28,8 @@ app.get("/health", (req, res) => {
     timestamp: new Date().toISOString(),
   });
 });
+
+swaggerDocs(app);
 
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);

@@ -33,7 +33,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     );
 
     if (!isPasswordValid) {
-      res.status(401).json({
+      res.status(404).json({
         error: "Invalid email or password",
       });
       return;
