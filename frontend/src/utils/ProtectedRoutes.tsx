@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router"
 
-function ProtectedRoutes (){
+function ProtectedRoutes() {
     const user = null
     return user ? <Outlet /> : <Navigate to='/login' />
 }
