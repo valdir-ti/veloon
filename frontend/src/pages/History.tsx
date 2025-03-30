@@ -4,8 +4,10 @@ import { BsTrash3Fill, BsCheckCircleFill, BsFileExcelFill } from "react-icons/bs
 import { THistorico } from "../types/historico"
 import Pagination from "../components/Pagination";
 import { API_URL } from "../utils/apiUrl";
+import { useAuthCheck } from "../hooks/useAuthCheck";
 
 function History() {
+    useAuthCheck();
     const token = localStorage.getItem('authToken');
     const [loading, setLoading] = useState(false)
     const [history, setHistory] = useState<THistorico[]>([])

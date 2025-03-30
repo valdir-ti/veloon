@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import './App.css'
 import { API_URL } from './utils/apiUrl';
 import { useNavigate } from 'react-router';
+import { useAuthCheck } from './hooks/useAuthCheck';
 
 interface FormData {
   numero1: string;
@@ -21,6 +22,7 @@ interface ApiResponse {
 }
 
 function App() {
+  useAuthCheck();
   const navigate = useNavigate()
   const token = localStorage.getItem('authToken');
   const [formData, setFormData] = useState<FormData>({
