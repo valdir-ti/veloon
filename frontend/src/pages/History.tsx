@@ -59,7 +59,7 @@ function History() {
         }
 
         fetchData()
-    }, [])
+    }, [token])
 
     const totalPages = Math.ceil(history.length / itemsPerPage)
     const currentData = history.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
