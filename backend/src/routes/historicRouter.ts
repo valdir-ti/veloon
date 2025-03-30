@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { historic, deleteHistoric } from "../controllers/historicController";
+import { Router } from 'express'
+import { historic, deleteHistoric } from '../controllers/historicController'
 
-const historicCheckRouter = Router();
+const historicCheckRouter = Router()
 
 /**
  * @swagger
@@ -19,7 +19,7 @@ const historicCheckRouter = Router();
  *       500:
  *        description: An unknown error occurred
  */
-historicCheckRouter.get("/historico", historic);
+historicCheckRouter.get('/historico', historic)
 
 /**
  * @swagger
@@ -47,6 +47,6 @@ historicCheckRouter.get("/historico", historic);
  *       500:
  *        description: An unknown error occurred
  */
-historicCheckRouter.delete("/historico/:id", deleteHistoric);
+historicCheckRouter.delete('/historico/:id', deleteHistoric)
 
-export default historicCheckRouter;
+export default historicCheckRouter

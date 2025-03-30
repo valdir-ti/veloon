@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { createUser } from "../controllers/userController";
+import { Router } from 'express'
+import { createUser } from '../controllers/userController'
 
-const userRouter = Router();
+const userRouter = Router()
 
 /**
  * @swagger
@@ -45,6 +45,6 @@ const userRouter = Router();
  *       500:
  *        description: An unknown error occurred
  */
-userRouter.post("/users", createUser);
+userRouter.post('/users', createUser)
 
-export default userRouter;
+export default userRouter

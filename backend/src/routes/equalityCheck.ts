@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { equalityCheck } from "../controllers/equalityCheckController";
+import { Router } from 'express'
+import { equalityCheck } from '../controllers/equalityCheckController'
 
-const equalityCheckRouter = Router();
+const equalityCheckRouter = Router()
 
 /**
  * @swagger
@@ -44,6 +44,6 @@ const equalityCheckRouter = Router();
  *       500:
  *        description: An unknown error occurred
  */
-equalityCheckRouter.post("/irmaos-siameses", equalityCheck);
+equalityCheckRouter.post('/irmaos-siameses', equalityCheck)
 
-export default equalityCheckRouter;
+export default equalityCheckRouter
