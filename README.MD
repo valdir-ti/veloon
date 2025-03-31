@@ -1,6 +1,7 @@
 # Veloon
 
 ## Irmão siameses 2.0
+  ![alt text](frontend/image.png)
 
 ### Para rodar o projeto localmente com Docker
 
