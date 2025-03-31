@@ -6,11 +6,11 @@ const historicCheckRouter = Router()
 /**
  * @swagger
  * /api/historico:
- *   post:
- *     summary: Lista o histórico de checagens do usuário
- *     tags: [Histórico]
+ *   get:
  *     security:
  *       - BearerAuth: []
+ *     summary: Lista o histórico de checagens do usuário
+ *     tags: [Histórico]
  *     responses:
  *       200:
  *         description: Lista o histórico de checagens do usuário
@@ -25,10 +25,10 @@ historicCheckRouter.get('/historico', historic)
  * @swagger
  * /api/historico/{id}:
  *   delete:
- *     summary: Deleta um histórico do usuário
- *     tags: [Histórico]
  *     security:
  *       - BearerAuth: []
+ *     summary: Deleta um histórico do usuário
+ *     tags: [Histórico]
  *     parameters:
  *       - name: id
  *         in: path

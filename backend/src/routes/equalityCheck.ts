@@ -7,10 +7,10 @@ const equalityCheckRouter = Router()
  * @swagger
  * /api/irmaos-siameses:
  *   post:
- *     summary: Checa se dois números são siameses
- *     tags: [Checagens]
  *     security:
  *       - BearerAuth: []
+ *     summary: Checa se dois números são siameses
+ *     tags: [Checagens]
  *     requestBody:
  *       required: true
  *       content:
