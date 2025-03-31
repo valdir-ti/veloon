@@ -125,6 +125,7 @@ function Register() {
             <input
               type='email'
               id='email'
+              autoComplete='username'
               value={formData.email}
               onChange={handleChange}
               placeholder='Digite o seu email'
@@ -142,6 +143,7 @@ function Register() {
             <input
               type='password'
               id='password'
+              autoComplete='new-password'
               value={formData.password}
               onChange={handleChange}
               placeholder='Digite o seu password'
@@ -159,6 +161,7 @@ function Register() {
             <input
               type='password'
               id='confirmPassword'
+              autoComplete='new-password'
               value={formData.confirmPassword}
               onChange={handleChange}
               placeholder='Confirme o password'

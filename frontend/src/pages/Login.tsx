@@ -100,6 +100,7 @@ function Login() {
             <input
               type='email'
               id='email'
+              autoComplete="username"
               value={credentials.email}
               onChange={handleChange}
               placeholder='Digite o seu email'
@@ -117,6 +118,7 @@ function Login() {
             <input
               type='password'
               id='password'
+              autoComplete="current-password"
               value={credentials.password}
               onChange={handleChange}
               placeholder='Digite o seu password'
