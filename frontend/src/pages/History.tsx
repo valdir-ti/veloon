@@ -72,7 +72,9 @@ function History() {
     }, [token])
 
     const totalPages = Math.ceil(history.length / itemsPerPage)
-    const currentData = history.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+    const currentData = Array.isArray(history)
+        ? history.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+        : [];
 
     return <main className='flex flex-1 flex-col items-center px-6 md:px-0'>
         <h1 className='text-4xl font-bold mb-8'>Historico Pessoal de verificações</h1>
