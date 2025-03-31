@@ -1,17 +1,17 @@
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router"
+import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router'
 
 import './index.css'
 
 import App from './App.tsx'
-import Login from "./pages/Login.tsx";
-import Register from "./pages/Register.tsx";
-import History from "./pages/History.tsx";
-import Layout from "./pages/Layout.tsx";
+import Login from './pages/Login.tsx'
+import Register from './pages/Register.tsx'
+import History from './pages/History.tsx'
+import Layout from './pages/Layout.tsx'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     children: [
       {
@@ -25,11 +25,11 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "/login",
+    path: '/login',
     element: <Login />,
   },
   {
-    path: "/registro",
+    path: '/registro',
     element: <Register />,
   },
 ]);

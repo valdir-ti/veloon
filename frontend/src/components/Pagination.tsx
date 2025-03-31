@@ -1,6 +1,6 @@
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
-import { TPagination } from "../types/pagination"
+import { TPagination } from '../types/pagination'
 
 function Pagination({ currentPage, setPage, totalPages }: TPagination) {
     const pagesToShow = 5
@@ -12,7 +12,7 @@ function Pagination({ currentPage, setPage, totalPages }: TPagination) {
         (_, i) => startPage + i
     )
 
-    return <div className="flex justify-center items-center mt-5 space-x-2 fixed top-[65%]">
+    return <div className='flex justify-center items-center mt-5 space-x-2 fixed top-[65%]'>
         <button
             className={`btn-primary w-8 h-8 flex justify-center items-center rounded-full border ${currentPage === 1 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-white hover:bg-blue-100 text-gray-700'}`}
             onClick={() => currentPage > 1 && setPage(currentPage - 1)}
@@ -28,7 +28,7 @@ function Pagination({ currentPage, setPage, totalPages }: TPagination) {
                     1
                 </button>
                 {startPage > 2 && (
-                    <span className="w-8 h-8 flex justify-center items-center text-gray-500">...</span>
+                    <span className='w-8 h-8 flex justify-center items-center text-gray-500'>...</span>
                 )}
             </>
         )}
@@ -44,7 +44,7 @@ function Pagination({ currentPage, setPage, totalPages }: TPagination) {
         {endPage < totalPages && (
             <>
                 {endPage < totalPages - 1 && (
-                    <span className="w-8 h-8 flex justify-center items-center text-gray-500">...</span>
+                    <span className='w-8 h-8 flex justify-center items-center text-gray-500'>...</span>
                 )}
                 <button
                     className={`btn-primary w-8 h-8 flex justify-center items-center rounded-full border ${currentPage === 1 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-white hover:bg-blue-100 text-gray-700'}`}
