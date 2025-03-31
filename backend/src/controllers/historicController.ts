@@ -21,6 +21,9 @@ export const historic = async (req: Request, res: Response): Promise<void> => {
 			where: {
 				userId: Number(userId),
 			},
+			orderBy: {
+				id: 'desc',
+			},
 		})
 
 		const serializedHistory = history.map((item: EqualityCheck) => ({
