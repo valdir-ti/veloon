@@ -112,7 +112,7 @@ function App() {
   return (
     <main className='px-6 md:px-0 flex flex-1 flex-col'>
       <h1 className='text-4xl font-bold mb-8'>Irmãos Siameses</h1>
-      <h4 className='text-1xl font-bold'>Verifique se os números a seguir são irmãos siameses</h4>
+      <h4 className='text-1xl font-bold'>Digite dois números e verifique se os mesmos são irmãos siameses</h4>
       <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
         <form onSubmit={handleSubmit} className='flex flex-col gap-6 mb-8'>
 
