@@ -28,9 +28,9 @@
 -   Estando devidamente registrado e logado ele conseguirá acessar a tela inicial
     -   `http://localhost:3000`
 -   Na tela inicial existe a função principal para comparar dois números e verificar se são siameses
-    ![alt text](image.png)
+    <img src="image.png" width="500" alt="Irmão siameses 2.0">
 -   Na tela de históricos traz a listagem das comparações realizadas pelo usuário com a possibilidade de exclusão de cada uma delas
 -   `http://localhost:3000/historico`
-    ![alt text](image-2.png)
+    <img src="image-2.png" width="500" alt="Irmão siameses 2.0">
 -   Para encerrar a sessão existe a opção de logout no header da página
-    ![alt text](image-1.png)
+    <img src="image-1.png" width="500" alt="Irmão siameses 2.0">
